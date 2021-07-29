@@ -1,14 +1,14 @@
 import { connect } from 'react-redux';
-import { actionPlay } from './../actions';
+import { actionSetActivity } from './../actions';
 
 const PlayButton = (props) => (
-        <button onClick={props.handleClick}>Play</button>
+        <button onClick={() => props.handleClick("playing")}>Play</button>
 );
 
 function mapDispatchToProps(dispatch) {
     return {
-        handleClick: () => {
-            dispatch(actionPlay());
+        handleClick: (activity) => {
+            dispatch(actionSetActivity(activity));
         }
     }
 }

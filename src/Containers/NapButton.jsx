@@ -1,14 +1,14 @@
 import { connect } from 'react-redux';
-import { actionNap } from './../actions';
+import { actionSetActivity } from './../actions';
 
 const NapButton = (props) => (
-        <button onClick={props.handleClick}>Nap</button>
+    <button onClick={() => props.handleClick("napping")}>Nap</button>
 );
 
 function mapDispatchToProps(dispatch) {
     return {
-        handleClick: () => {
-            dispatch(actionNap());
+        handleClick: (activity) => {
+            dispatch(actionSetActivity(activity));
         }
     }
 }

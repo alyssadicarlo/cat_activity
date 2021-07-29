@@ -1,18 +1,16 @@
-import { ACTION_NAP, ACTION_EAT, ACTION_PLAY } from './actions';
+import { ACTION_SET_NAME, ACTION_SET_ACTIVITY } from './actions';
 
-export function changeActivity(state, action) {
+export function cat(state, action) {
     switch (action.type) {
-        case ACTION_NAP:
+        case ACTION_SET_NAME:
             return {
-                activity: ACTION_NAP
+                ...state,
+                name: action.payload
             }
-        case ACTION_EAT:
+        case ACTION_SET_ACTIVITY:
             return {
-                activity: ACTION_EAT
-            }
-        case ACTION_PLAY:
-            return {
-                activity: ACTION_PLAY
+                ...state,
+                activity: action.payload
             }
         default:
             return state;

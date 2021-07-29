@@ -1,14 +1,14 @@
 import { connect } from 'react-redux';
-import { actionEat } from './../actions';
+import { actionSetActivity } from './../actions';
 
 const EatButton = (props) => (
-        <button onClick={props.handleClick}>Eat</button>
+    <button onClick={() => props.handleClick("eating")}>Eat</button>
 );
 
 function mapDispatchToProps(dispatch) {
     return {
-        handleClick: () => {
-            dispatch(actionEat());
+        handleClick: (activity) => {
+            dispatch(actionSetActivity(activity));
         }
     }
 }
