@@ -4,8 +4,7 @@ import { connect } from 'react-redux';
 
 function mapDispatchToProps(dispatch) {
     return {
-        handleSubmit: (event, name) => {
-            event.preventDefault();
+        handleSubmit: (name) => {
             dispatch(actionSetName(name));
         }
     }

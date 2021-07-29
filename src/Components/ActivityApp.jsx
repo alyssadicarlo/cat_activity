@@ -7,8 +7,8 @@ import NameForm from './../Containers/NameFormContainer';
 const ActivityApp = () => {
     return (
         <div>
-            <NameForm />
             <Output />
+            <NameForm />
             <PlayButton />
             <EatButton />
             <NapButton />

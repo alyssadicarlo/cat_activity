@@ -7,9 +7,15 @@ const NameForm = (props) => {
         setInput(event.target.value);
     }
 
+    const _handleSubmit = (event) => {
+        event.preventDefault();
+        props.handleSubmit(input);
+        setInput("");
+    }
+
     return (
-        <form onSubmit={(event) => props.handleSubmit(event, input)}>
-            <input type="text" onChange={_handleChange} />
+        <form onSubmit={(event) => _handleSubmit(event)}>
+            <input type="text" onChange={_handleChange} value={input} />
             <button type="submit">Change Name</button>
         </form>
     )
